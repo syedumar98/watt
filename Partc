@@ -1,0 +1,31 @@
+// BSSE-SEC-A-5651493-75-SYED MUHAMMAD UMAR
+import java.util.Scanner;
+class Partc {
+    public static String Intbin(int n ){
+        int div ;
+        int[] remainder = new int[100] ;
+        int i = 0;
+        while(n > 1){
+            div = n/2;
+            remainder[i] = n%2;
+            n = div;
+            i++;
+        }
+        String bin = String.valueOf(n);
+        for(int r=i-1; r>=0; r--)
+            bin = bin.concat(String.valueOf(remainder[r]));
+
+        return bin;
+    }
+
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number to convert into binary");
+        int n =sc.nextInt();
+
+        String a = Intbin(n);
+        System.out.println(a);
+
+
+    }
+}
